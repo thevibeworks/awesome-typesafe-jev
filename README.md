@@ -2,7 +2,7 @@
 # Awesome TypeSafe Jev [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![site](https://img.shields.io/badge/site-browse_with_media-1f6f4a)](https://thevibeworks.github.io/awesome-typesafe-jev/)
-[![entries](https://img.shields.io/badge/entries-35-informational)](data/entries.json)
+[![entries](https://img.shields.io/badge/entries-36-informational)](data/entries.json)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 <p align="center">
@@ -11,7 +11,7 @@
 
 A curated list of projects built on [Jev](https://typesafe.ai), TypeSafe AI's System One model. Jev does not write text. You send a `state` and typed questions (Choice, Score, Noul) and get probabilities back.
 
-**35 entries, 15 picks, every one read before it was listed.** Bigger lists exist and are linked [below](#other-lists). This one is short on purpose: of 329 catalogued repos, 69 were read in full and 35 made it.
+**36 entries, 15 picks, every one read before it was listed.** Bigger lists exist and are linked [below](#other-lists). This one is short on purpose: of 329 catalogued repos, 69 were read in full and 36 made it.
 
 **[Browse the site](https://thevibeworks.github.io/awesome-typesafe-jev/)** for media, filters and search. The data is one file: [`data/entries.json`](data/entries.json).
 
@@ -270,6 +270,7 @@ Clients and adapters beyond the official Python and JS SDKs.
 
 - [ai-cli](https://github.com/vercel-labs/ai-cli) - Vercel AI SDK terminal CLI whose `ai evaluate` command asks Boolean, Choice and Score questions over stdin, with Jev as the default evaluation model. <sub>no license · TypeScript · [live](https://ai-cli.dev/docs/evaluate)</sub>
 - [advocaat](https://github.com/pithings/advocaat) - TypeScript client with tagged-template helpers (ask.if, ask.choice, ask.switch, ask.score) that batch typed Jev questions and return typed answers. <sub>MIT · TypeScript</sub>
+- [jevql](https://github.com/kylemclaren/jevql) - psql-shaped CLI and Go/TS/Python SDKs that add jev(), jev_prob, jev_choice and jev_score to plain SQL on vanilla Postgres; Jev judges the surviving rows. <sub>MIT · Go</sub>
 
 ## Measured by us
 
