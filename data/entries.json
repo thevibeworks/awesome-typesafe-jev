@@ -565,6 +565,20 @@
    "license": "MIT",
    "language": "Python",
    "concern": "Proof of concept exercised only on Android Settings, and the README still carries a note to add the demo GIF, so the recording may not exist"
+  },
+  {
+   "name": "jevql",
+   "repo": "kylemclaren/jevql",
+   "url": "https://github.com/kylemclaren/jevql",
+   "category": "sdk",
+   "what": "psql-shaped CLI and Go/TS/Python SDKs that add jev(), jev_prob, jev_choice and jev_score to plain SQL on vanilla Postgres; Jev judges the surviving rows",
+   "evidence": "Ran it myself against Postgres 17 with the mock and real TypeSafe API; tests in internal/exec and internal/serve.",
+   "concern": "Every row that survives the SQL filters is sent to TypeSafe and judged, so put cheap predicates in SQL first",
+   "added": "2026-09-18",
+   "stars": 0,
+   "pushedAt": "2026-09-18",
+   "license": "MIT",
+   "language": "Go"
   }
  ],
  "otherLists": [
