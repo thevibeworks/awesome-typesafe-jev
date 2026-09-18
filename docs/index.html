@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome TypeSafe Jev - projects built on Jev, read before listed</title>
+  <meta name="description" content="A short, vetted list of projects built on TypeSafe's Jev model, with media, plus our own latency and failure-mode measurements. Not affiliated with TypeSafe AI.">
+  <link rel="canonical" href="https://thevibeworks.github.io/awesome-typesafe-jev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Awesome TypeSafe Jev">
+  <meta property="og:description" content="Projects built on TypeSafe's Jev model, read before listed. With media and our own measurements.">
+  <meta property="og:url" content="https://thevibeworks.github.io/awesome-typesafe-jev/">
+  <meta property="og:image" content="https://thevibeworks.github.io/awesome-typesafe-jev/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#list">Skip to the list</a>
+  <nav class="bar" aria-label="Site">
+    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="22" height="22"> awesome<b>jev</b></a>
+    <span class="links">
+      <a href="#list">list</a>
+      <a href="lab.html">lab</a>
+      <a href="entries.json">json</a>
+      <a href="https://github.com/thevibeworks/awesome-typesafe-jev">github</a>
+    </span>
+  </nav>
+
+  <header class="hero">
+    <div class="pitch">
+      <p class="eyebrow">a curated list · not affiliated with TypeSafe AI</p>
+      <h1>Projects built on Jev,<br><em>read before listed.</em></h1>
+      <p class="lede">Jev is TypeSafe's System One model. It does not write text: you send a state and typed
+        questions, and get probabilities back. Launch week produced hundreds of repos. We read them so you
+        do not have to.</p>
+      <p class="cta"><a class="btn" href="#list">Browse the list</a> <a class="btn ghost" href="lab.html">See what we measured</a></p>
+    </div>
+    <figure class="answer" aria-label="This list, written as a Jev answer">
+      <figcaption><span class="dot"></span> POST /v1/systemone <span class="dim">· this list, as an answer</span></figcaption>
+      <div class="qa">
+        <p class="q"><span class="type">noul</span> Was every entry read before it was listed?</p>
+        <div class="meter"><i style="--p:1"></i><b>1.00</b></div>
+      </div>
+      <div class="qa">
+        <p class="q"><span class="type">choice</span> How was it curated?</p>
+        <div class="choice" id="funnel"></div>
+      </div>
+      <div class="qa">
+        <p class="q"><span class="type">score</span> Are stars a criterion?</p>
+        <div class="meter"><i style="--p:.02"></i><b>0.02</b></div>
+      </div>
+    </figure>
+  </header>
+
+  <main id="list">
+    <div class="controls">
+      <label class="search"><span class="sr">Search entries</span>
+        <input id="q" type="search" placeholder="Search: browser, rerank, doom, rust ..." autocomplete="off"></label>
+      <label class="toggle"><input id="picks" type="checkbox"> picks only</label>
+      <label class="sort"><span class="sr">Sort</span>
+        <select id="sort"><option value="curated">curated order</option><option value="stars">most stars</option><option value="recent">recently pushed</option></select></label>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="sections"></div>
+    <p class="empty" id="empty" hidden>Nothing matches. Clear the search or pick another category.</p>
+  </main>
+
+  <section class="lab" id="lab">
+    <div>
+      <p class="eyebrow">measured by us</p>
+      <h2>Vendor numbers are the vendor's. These are ours.</h2>
+      <ul id="findings"></ul>
+      <p><a class="btn" href="lab.html">Open the interactive lab</a></p>
+    </div>
+    <a href="lab.html"><img src="media/lab-latency.png" alt="Strip plot of Jev request latency by number of questions per call" loading="lazy"></a>
+  </section>
+
+  <section class="others">
+    <h2>Other lists</h2>
+    <p class="dim">Bigger and broader than this one. Use them as a worklist, open each repo before trusting it.</p>
+    <ul id="others"></ul>
+  </section>
+
+  <footer>
+    <p>Not affiliated with TypeSafe AI. "TypeSafe" and "Jev" are their names. Media belongs to its credited authors.</p>
+    <p>Add or fix an entry: <a href="https://github.com/thevibeworks/awesome-typesafe-jev/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+      · data last updated <span id="updated"></span></p>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

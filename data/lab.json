@@ -1,0 +1,11 @@
+{
+  "model": "jev-1.13.0",
+  "date": "2026-09-18",
+  "findings": [
+    "Counting breaks the way TypeSafe says it does: asked whether \"strawberry\" has exactly three r, Jev says yes at 0.60; asked whether it has exactly two, it says yes at 0.79.",
+    "Their fix works, mostly: one yes/no question per item, summed in code, counted 11 of 12 fruits in a 23-item list. The miss was \"lime\" at 0.32.",
+    "On 33 known-answer cases: controls 4/4, dates 6/6, negation and indirection 6/6, adversarial 4/4, arithmetic 5/6, counting 5/7. Arithmetic answers sat near 0.5, which is the usable signal.",
+    "Latency depends on when you call. The fastest request stays near 250 ms up to 25 questions per call, which supports the parallel-questions claim, but medians ranged from 310 ms (1 question) to 4.7 s (200 questions), and an earlier run the same day was several times faster at 200.",
+    "The 3-question quickstart call billed 424 input tokens: about $0.000018 at the listed $0.042 per million."
+  ]
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 560" role="img" aria-label="Awesome TypeSafe Jev: a question goes in, a probability comes out">
+  <defs><style>
+    .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+    .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  </style></defs>
+  <rect width="1640" height="560" rx="20" fill="#f6f4ee"/>
+  <rect x="1" y="1" width="1638" height="558" rx="19" fill="none" stroke="#dcd8cb" stroke-width="2"/>
+  <text x="80" y="118" class="mono" font-size="22" fill="#6a6a5c" letter-spacing="2">A CURATED LIST · READ BEFORE LISTED</text>
+  <text x="80" y="230" class="serif" font-size="104" fill="#17170f" letter-spacing="-2">Awesome</text>
+  <text x="80" y="340" class="serif" font-size="104" font-style="italic" fill="#17694a" letter-spacing="-2">TypeSafe Jev</text>
+  <text x="80" y="430" class="mono" font-size="24" fill="#6a6a5c">a question goes in · a probability comes out</text>
+  <text x="80" y="490" class="mono" font-size="20" fill="#9b9a8b">not affiliated with TypeSafe AI</text>
+  <g transform="translate(900 96)">
+    <rect width="660" height="368" rx="14" fill="#fffdf8" stroke="#dcd8cb" stroke-width="2"/>
+    <circle cx="34" cy="38" r="6" fill="#17694a"/>
+    <text x="52" y="45" class="mono" font-size="19" fill="#17170f">POST /v1/systemone</text>
+    <line x1="28" y1="68" x2="632" y2="68" stroke="#dcd8cb" stroke-width="2" stroke-dasharray="6 6"/>
+    <rect x="28" y="92" width="74" height="28" rx="4" fill="none" stroke="#17694a" stroke-width="2"/>
+    <text x="40" y="112" class="mono" font-size="17" fill="#17694a">choice</text>
+    <text x="116" y="113" font-family="system-ui,sans-serif" font-size="22" fill="#17170f">Which of these is worth your time?</text>
+    <g class="mono" font-size="19" fill="#17170f">
+      <text x="28" y="172">read + run</text><rect x="190" y="156" width="360" height="18" rx="3" fill="#d9ece2"/><rect x="190" y="156" width="302" height="18" rx="3" fill="#17694a"/><text x="632" y="172" text-anchor="end">0.84</text>
+      <text x="28" y="222">starred</text><rect x="190" y="206" width="360" height="18" rx="3" fill="#d9ece2"/><rect x="190" y="206" width="47" height="18" rx="3" fill="#17694a" opacity=".6"/><text x="632" y="222" text-anchor="end">0.13</text>
+      <text x="28" y="272">hyped</text><rect x="190" y="256" width="360" height="18" rx="3" fill="#d9ece2"/><rect x="190" y="256" width="11" height="18" rx="3" fill="#17694a" opacity=".4"/><text x="632" y="272" text-anchor="end">0.03</text>
+    </g>
+    <line x1="28" y1="304" x2="632" y2="304" stroke="#dcd8cb" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="28" y="340" class="mono" font-size="17" fill="#6a6a5c">confidence 0.71 · illustrative, not an API result</text>
+  </g>
+</svg>
