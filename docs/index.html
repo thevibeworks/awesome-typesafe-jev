@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Awesome TypeSafe Jev - projects built on Jev, read before listed</title>
-  <meta name="description" content="A short, vetted list of projects built on TypeSafe's Jev model, with media, plus our own latency and failure-mode measurements. Not affiliated with TypeSafe AI.">
+  <meta name="description" content="A reviewed list of projects built on TypeSafe's Jev model, with media, plus our own latency and failure-mode measurements. Not affiliated with TypeSafe AI.">
   <link rel="canonical" href="https://thevibeworks.github.io/awesome-typesafe-jev/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Awesome TypeSafe Jev">
@@ -21,6 +21,7 @@
     <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="22" height="22"> awesome<b>jev</b></a>
     <span class="links">
       <a href="#list">list</a>
+      <a href="#read">read</a>
       <a href="lab.html">lab</a>
       <a href="entries.json">json</a>
       <a href="https://github.com/thevibeworks/awesome-typesafe-jev">github</a>
@@ -32,15 +33,15 @@
       <p class="eyebrow">a curated list · not affiliated with TypeSafe AI</p>
       <h1>Projects built on Jev,<br><em>read before listed.</em></h1>
       <p class="lede">Jev is TypeSafe's System One model. It does not write text: you send a state and typed
-        questions, and get probabilities back. Launch week produced hundreds of repos. We read them so you
-        do not have to.</p>
+        questions, and get probabilities back. Launch week produced thousands of repos. We swept GitHub, npm and
+        Hugging Face and read them, so you do not have to.</p>
       <p class="cta"><a class="btn" href="#list">Browse the list</a> <a class="btn ghost" href="lab.html">See what we measured</a></p>
     </div>
     <figure class="answer" aria-label="This list, written as a Jev answer">
       <figcaption><span class="dot"></span> POST /v1/systemone <span class="dim">· this list, as an answer</span></figcaption>
       <div class="qa">
-        <p class="q"><span class="type">noul</span> Was every entry read before it was listed?</p>
-        <div class="meter"><i style="--p:1"></i><b>1.00</b></div>
+        <p class="q"><span class="type">noul</span> Is anything listed without being read?</p>
+        <div class="meter"><i style="--p:0"></i><b>0.00</b></div>
       </div>
       <div class="qa">
         <p class="q"><span class="type">choice</span> How was it curated?</p>
@@ -57,7 +58,7 @@
     <div class="controls">
       <label class="search"><span class="sr">Search entries</span>
         <input id="q" type="search" placeholder="Search: browser, rerank, doom, rust ..." autocomplete="off"></label>
-      <label class="toggle"><input id="picks" type="checkbox"> picks only</label>
+      <label class="toggle"><input id="picks" type="checkbox"> editors' picks only</label>
       <label class="sort"><span class="sr">Sort</span>
         <select id="sort"><option value="curated">curated order</option><option value="stars">most stars</option><option value="recent">recently pushed</option></select></label>
     </div>
@@ -66,6 +67,13 @@
     <div id="sections"></div>
     <p class="empty" id="empty" hidden>Nothing matches. Clear the search or pick another category.</p>
   </main>
+
+  <section class="read" id="read">
+    <p class="eyebrow">read and watch</p>
+    <h2>Docs, hands-on reports, explainers, videos.</h2>
+    <p class="dim">Each piece was opened and read. Notes say what you get, and attribute claims to their authors.</p>
+    <div id="resources"></div>
+  </section>
 
   <section class="lab" id="lab">
     <div>

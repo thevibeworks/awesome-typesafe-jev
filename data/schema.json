@@ -9,7 +9,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name", "url", "category", "what", "evidence", "added"],
+        "required": ["name", "url", "category", "what", "added"],
         "properties": {
           "name": { "type": "string" },
           "repo": { "type": "string", "pattern": "^[\\w.-]+/[\\w.-]+$" },

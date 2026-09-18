@@ -46,20 +46,42 @@ function writeHash() { const p = new URLSearchParams();
   if (state.picks) p.set("picks", "1"); if (state.sort !== "curated") p.set("sort", state.sort);
   history.replaceState(null, "", p.toString() ? "#" + p : location.pathname + location.search); }
 
+// Listed (non-pick) entries render as dense rows: hundreds of them have to stay scannable.
+function row(e) {
+  const li = el("li"), a = link(e.url, null);
+  a.append(el("span", "owner", e.repo ? e.repo.split("/")[0] + " / " : ""), document.createTextNode(e.name)); li.append(a);
+  if (e.notable) li.append(el("span", "badge", "notable"));
+  li.append(el("span", "what", " " + e.what + "."));
+  const meta = el("span", "meta");
+  meta.append(el("span", null, "\u2605 " + e.stars.toLocaleString("en")), el("span", null, e.license || "no license"));
+  if (e.language) meta.append(el("span", null, e.language));
+  if (e.live) meta.append(link(e.live, "live"));
+  li.append(meta); return li;
+}
+
+const PREVIEW = 8;
 function draw(data) {
   const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
   const hit = e => (!state.picks || e.pick) && (state.c === "all" || e.category === state.c) &&
     words.every(w => [e.name, e.repo, e.what, e.evidence, e.language, e.category].join(" ").toLowerCase().includes(w));
   const sorters = { stars: (a, b) => b.stars - a.stars, recent: (a, b) => b.pushedAt.localeCompare(a.pushedAt) };
+  const expanded = state.c !== "all" || words.length > 0;
   const box = $("sections"); box.replaceChildren(); let shown = 0;
   for (const [id, title, blurb] of data.categories) {
     let list = data.entries.filter(e => e.category === id && hit(e));
     if (!list.length) continue;
     if (sorters[state.sort]) list = [...list].sort(sorters[state.sort]);
     shown += list.length;
-    const sec = el("section", "sec"), grid = el("div", "grid");
-    sec.append(el("h2", null, title), el("p", null, blurb));
-    list.forEach(e => grid.append(card(e, title))); sec.append(grid); box.append(sec);
+    const picks = list.filter(e => e.pick), rest = list.filter(e => !e.pick);
+    const sec = el("section", "sec"), h = el("h2", null, title);
+    h.append(el("span", "n", String(list.length))); sec.append(h, el("p", null, blurb));
+    if (picks.length) { const grid = el("div", "grid"); picks.forEach(e => grid.append(card(e, title))); sec.append(grid); }
+    if (rest.length) {
+      const ul = el("ul", "rows"); (expanded ? rest : rest.slice(0, PREVIEW)).forEach(e => ul.append(row(e))); sec.append(ul);
+      if (!expanded && rest.length > PREVIEW) { const b = el("button", "more", `Show all ${list.length} in ${title}`); b.type = "button";
+        b.onclick = () => { state.c = id; writeHash(); draw(data); $("list").scrollIntoView(); }; sec.append(b); }
+    }
+    box.append(sec);
   }
   $("empty").hidden = shown > 0;
   $("count").textContent = `${shown} of ${data.entries.length} entries`;
@@ -69,19 +91,26 @@ function draw(data) {
 
 fetch("entries.json").then(r => r.json()).then(data => {
   const v = data.vetting, funnel = $("funnel");
-  for (const [k, n] of [["catalogued", v.catalogued], ["read in full", v.read], ["listed", v.kept]]) {
-    const row = el("div"), bar = el("i"); bar.style.setProperty("--p", (n / v.catalogued).toFixed(3));
-    row.append(el("span", null, k), bar, el("span", null, String(n))); funnel.append(row);
+  for (const [k, n] of [["found", v.found], ["passed checks", v.passedChecks], ["reviewed", v.reviewed], ["listed", v.kept]]) {
+    const row = el("div"), bar = el("i"); bar.style.setProperty("--p", (n / v.found).toFixed(3));
+    row.append(el("span", null, k), bar, el("span", null, n.toLocaleString("en"))); funnel.append(row);
   }
   const chips = $("chips"), used = new Set(data.entries.map(e => e.category));
   for (const [id, title] of [["all", "All"], ...data.categories.filter(c => used.has(c[0]))]) {
     const b = el("button", null, id === "all" ? `All ${data.entries.length}` : `${title} ${data.entries.filter(e => e.category === id).length}`);
     b.type = "button"; b.dataset.c = id; b.onclick = () => { state.c = id; writeHash(); draw(data); }; chips.append(b);
   }
+  for (const [id, title, blurb] of data.resourceSections) {
+    const list = data.resources.filter(r => r.section === id); if (!list.length) continue;
+    const box = el("div", "res"), ul = el("ul"); box.append(el("h3", null, title)); if (blurb) box.append(el("p", "dim", blurb));
+    for (const r of list) { const li = el("li"); li.append(link(r.url, r.title), el("span", "note", " " + r.note + "."));
+      const by = [r.by, r.date, r.lang !== "en" && r.lang].filter(Boolean).join(" \u00b7 "); if (by) li.append(el("span", "by", by)); ul.append(li); }
+    box.append(ul); $("resources").append(box);
+  }
   data.lab.findings.forEach(f => $("findings").append(el("li", null, f)));
   data.otherLists.forEach(l => { const li = el("li"); li.append(link(l.url, l.name), document.createTextNode(" - " + l.note + ".")); $("others").append(li); });
   $("updated").textContent = data.updated;
-  $("q").oninput = e => { state.q = e.target.value; writeHash(); draw(data); };
+  $("q").oninput = e => { state.q = e.target.value; state.c = "all"; writeHash(); draw(data); };  // search is always across the whole list
   $("picks").onchange = e => { state.picks = e.target.checked; writeHash(); draw(data); };
   $("sort").onchange = e => { state.sort = e.target.value; writeHash(); draw(data); };
   addEventListener("hashchange", () => { readHash(); draw(data); });

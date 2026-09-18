@@ -14,13 +14,11 @@ The list is data. `data/entries.json` is the source of truth; `README.md` and
      "url": "https://github.com/owner/repo-name",
      "category": "agent-tooling",
      "what": "One plain sentence, 160 characters at most, saying what it concretely does",
-     "evidence": "What in the README shows it is real: how to run it, a demo, a method behind a number",
-     "concern": "Optional. The main weakness a user should know first",
      "added": "2026-09-18"
    }
    ```
 
-   Categories are listed in `scripts/categories.mjs`. `stars`, `pushedAt`,
+   That is a complete listed-tier entry. Categories are listed in `scripts/categories.mjs`. `stars`, `pushedAt`,
    `license` and `language` are filled by `npm run refresh`.
 
 2. Run `npm run validate && npm run render` and commit the result.
@@ -35,7 +33,21 @@ The list is data. `data/entries.json` is the source of truth; `README.md` and
 - Numbers from a README are reported as "README claims". We do not repeat them as fact.
 - Your own project is welcome. Say so in the pull request.
 
-`"pick": true` and `media` are set by maintainers. Media is copied into
+## Tiers
+
+- **Listed**: the fields above. Most entries.
+- **Notable** (`"notable": true`): clearly above the rest. Measurements with a method, a demo shown
+  working, tests, or an honest limits section. Say why in the pull request.
+- **Editors' pick** (`"pick": true`): set by maintainers after reading the README in full. Needs
+  `evidence` (why it is here) and, where there is one, `concern` (what to know first).
+
+## Finding more
+
+`GITHUB_TOKEN=... npm run discover` sweeps GitHub (repository, topic and code search) into the
+untracked `.work/`; `python3 scripts/gate.py` applies the mechanical checks and rewrites
+`data/candidates.json`. These list candidates only; nothing is added to the list without a review.
+
+`media` is set by maintainers. Media is copied into
 `docs/media/` only when the source repository's license allows it, with
 `media.credit` and `media.source` recorded; otherwise it is linked via `demo`.
 

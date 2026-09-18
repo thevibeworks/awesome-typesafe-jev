@@ -1,0 +1,622 @@
+{
+ "updated": "2026-09-18",
+ "resources": [
+  {
+   "title": "Quick start",
+   "url": "https://docs.typesafe.ai/introduction/quickstart",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Shortest path to a first call: get a key, send one state with typed questions, read the answers"
+  },
+  {
+   "title": "API reference",
+   "url": "https://docs.typesafe.ai/api",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "HTTP reference for POST /v1/systemone: request body (state, model, questions), answer shapes per question type, rate-limit handling"
+  },
+  {
+   "title": "Primitives (Questions)",
+   "url": "https://docs.typesafe.ai/primitives",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Overview of the three question types (Choice, Score, Noul), what each returns, how to pick one, and how to ask several in one call"
+  },
+  {
+   "title": "Choice",
+   "url": "https://docs.typesafe.ai/primitives/choice",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Choice picks one option from a declared set and returns the selected option, a probability per option, and a confidence value"
+  },
+  {
+   "title": "Score",
+   "url": "https://docs.typesafe.ai/primitives/score",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Score rates the state against ordered descriptive levels and returns a score, a probability per level, and a confidence value"
+  },
+  {
+   "title": "Noul",
+   "url": "https://docs.typesafe.ai/primitives/noul",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Noul asks a yes/no question and returns the probability that the answer is yes"
+  },
+  {
+   "title": "State",
+   "url": "https://docs.typesafe.ai/concepts/state",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "What state is, how to structure it (string, JSON object or array), and how to give the model the context a question needs"
+  },
+  {
+   "title": "Confidence",
+   "url": "https://docs.typesafe.ai/confidence",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "How TypeSafe reports certainty, how confidence differs from probability, and how to use it to decide whether code should act"
+  },
+  {
+   "title": "Models",
+   "url": "https://docs.typesafe.ai/models",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Model card for jev-1.13.0: $0.042 per million input tokens, free output, rate limits, 64k context (32k for state), text-only input"
+  },
+  {
+   "title": "Jev 1.13 jaggedness",
+   "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "TypeSafe's own list of known weak spots in jev-1.13, which it says will be fixed in later versions; read before designing questions"
+  },
+  {
+   "title": "How to build with TypeSafe",
+   "url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Design guidance: keep code in control of flow and side effects, and hand the model only narrow, structured decisions"
+  },
+  {
+   "title": "Patterns",
+   "url": "https://docs.typesafe.ai/patterns",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Index of four architecture patterns: speculative fan-out, confidence-gated routing, composite scoring, and intent routing"
+  },
+  {
+   "title": "Agent skill",
+   "url": "https://docs.typesafe.ai/agent-skill",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Install commands for a skill that gives Claude Code, Codex and other coding agents the question types, patterns and API usage"
+  },
+  {
+   "title": "Parallel questions",
+   "url": "https://docs.typesafe.ai/cookbooks/parallel_questions",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Cookbook: 13 questions over the GDPR Wikipedia article; TypeSafe reports one batched call is 12.2x cheaper and 10.0x faster than 13 single calls"
+  },
+  {
+   "title": "Re-ranking",
+   "url": "https://docs.typesafe.ai/cookbooks/rerank_typesafe",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Cookbook: re-ranks 30-passage BM25 shortlists for 40 CLERC legal queries; TypeSafe reports top-1 going from 5% to 18% and top-10 from 38% to 62%"
+  },
+  {
+   "title": "Guardrails for LLMs",
+   "url": "https://docs.typesafe.ai/cookbooks/llm_guardrails",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Cookbook: screen messages into and out of an LLM app with hazard questions and a severity score, then threshold to pass, review or block"
+  },
+  {
+   "title": "Classifying RAG passages",
+   "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Cookbook: score each retrieved passage in one request, then decide in code which reach the answering model; drops prompt-injection passages"
+  },
+  {
+   "title": "Function calling",
+   "url": "https://docs.typesafe.ai/cookbooks/function_calling",
+   "section": "official-docs",
+   "by": "TypeSafe AI",
+   "lang": "en",
+   "note": "Cookbook: maps natural-language trading requests to typed function calls by turning function names and closed-set arguments into questions"
+  },
+  {
+   "title": "Jev (typesafe)",
+   "url": "https://developers.cloudflare.com/ai/models/typesafe/jev/",
+   "section": "platform",
+   "by": "Cloudflare",
+   "lang": "en",
+   "note": "Cloudflare AI model page for typesafe/jev: 32,000-token context, env.AI.run and curl examples with Noul, Choice and Score, plus sample responses"
+  },
+  {
+   "title": "TypeSafe Jev now available in AI Gateway",
+   "url": "https://www.netlify.com/changelog/typesafe-jev-ai-gateway/",
+   "section": "platform",
+   "by": "Netlify",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Netlify changelog: call Jev from Netlify Functions via @typesafe-ai/sdk with no API key setup, billed to Netlify credits; includes a contact-form routing example"
+  },
+  {
+   "title": "AI SDK Providers: TypeSafe",
+   "url": "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai",
+   "section": "platform",
+   "by": "Vercel AI SDK",
+   "lang": "en",
+   "note": "Docs for @ai-sdk/typesafe-ai: experimental_evaluate with choice, score and boolean (Noul) questions, limits per type, rounding, confidence metadata, retries"
+  },
+  {
+   "title": "Testing TypeSafe Jev, Mistral and Gemini for local event validation",
+   "url": "https://nearhere.events/blog/typesafe-jev-mistral-gemini-event-validation",
+   "section": "hands-on",
+   "by": "Jon Reed (Near Here)",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Near Here reports Jev matched 48/50 event-listing decisions vs 43 for Gemini 3.5 Flash-Lite and 42 for Mistral Small 4, at 0.59s and $0.043 per 1,000 decisions"
+  },
+  {
+   "title": "Mini-Vibe Check: TypeSafe's Jev Judged Everything I've Written in 0.7 Seconds",
+   "url": "https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds",
+   "section": "hands-on",
+   "by": "Mike Taylor (Every)",
+   "date": "2026-09-15",
+   "lang": "en",
+   "note": "Every's head of evals ran Jev over his own writing; the free preview explains the yes/no-probability idea and says accuracy is still open. Rest needs an account"
+  },
+  {
+   "title": "jev 同士に五目並べで対戦させた",
+   "url": "https://zenn.dev/mizchi/articles/jev-plays-gomoku",
+   "section": "hands-on",
+   "by": "mizchi",
+   "date": "2026-09-17",
+   "lang": "ja",
+   "note": "mizchi had Jev play gomoku against itself via one Choice over legal moves; a 25-move game took 13.9s, about 500ms per move, with confidence logged per move. Repo linked"
+  },
+  {
+   "title": "TypeSafeのJevを正しく驚く、それってLLMでできませんか？",
+   "url": "https://zenn.dev/nwn/articles/824026c76116e0",
+   "section": "hands-on",
+   "by": "ヨ (nwn)",
+   "date": "2026-09-17",
+   "lang": "ja",
+   "note": "Author rebuilt the parallel-answer trick with Gemma3 270M first-token logits and reports 77x over JSON output; in a Mario harness Jev still beat the older LLMs tried"
+  },
+  {
+   "title": "Jev means structured output is interesting again",
+   "url": "https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/",
+   "section": "explainer",
+   "by": "Sean Goedecke",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Skeptical read: argues prefilling a normal LLM and sampling one constrained token gets most of the speed (he reports 2-3x on Qwen2.5-1.5B) and doubts a technical moat"
+  },
+  {
+   "title": "Typed Decisions, Not Chat",
+   "url": "https://warmersun.com/jev/",
+   "section": "explainer",
+   "by": "Warmer Sun",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Briefing that sets each launch claim against TypeSafe's own footnotes: eval labels come from two LLMs, the 0% hallucination figure is not empirical, no paper or weights"
+  },
+  {
+   "title": "Jev: The Language Model That Won't Talk",
+   "url": "https://anthonymaio.substack.com/p/jev-the-language-model-that-wont",
+   "section": "explainer",
+   "by": "Anthony Maio",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Analysis from secondary sources: Jev 67.8% vs GPT Sol 74.1% on TypeSafe's evals, RLCD unpublished, and calibrated answers need not compose into a calibrated workflow"
+  },
+  {
+   "title": "He Says He Co-Invented ChatGPT. His New AI, Jev, Won't Write a Word",
+   "url": "https://dev.to/gabrielanhaia/he-says-he-co-invented-chatgpt-his-new-ai-jev-wont-write-a-word-e3c",
+   "section": "explainer",
+   "by": "Gabriel Anhaia",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "TypeScript ticket-triage walkthrough with the AI SDK provider plus a threshold routing function; no live run (author had no key), numbers are vendor-reported"
+  },
+  {
+   "title": "AI That Doesn't Talk: A Plain-English Guide to TypeSafe's Jev",
+   "url": "https://ziplyne.agency/blog/ai-that-doesnt-talk-typesafe-jev-guide",
+   "section": "explainer",
+   "by": "Isaac Horowitz (ZipLyne)",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Long beginner guide with Python SDK snippets, use cases by industry, a list of reasons to stay skeptical, and a shadow-run rollout plan. No testing of its own"
+  },
+  {
+   "title": "What Is Jev? How to Implement Typesafe AI’s Decision Model (Practical Guide)",
+   "url": "https://mohammedshehu.com/jev-typesafe-ai/",
+   "section": "explainer",
+   "by": "Mo Shehu",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Python SDK intro plus a proposed (not built) use in the author's chargeback tool; test results quoted are Every's, not his own"
+  },
+  {
+   "title": "TypeSafe JEV Explained: AI Decisions Without a Chatbot",
+   "url": "https://www.theneuron.ai/explainer-articles/typesafe-jev-system-one-models-explained/",
+   "section": "explainer",
+   "by": "Grant Harvey (The Neuron)",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Short non-technical explainer of the launch post and RLCD; all figures are company-reported and the only counterpoint is that general LLMs keep getting cheaper"
+  },
+  {
+   "title": "TypeSafe Jev: the First Decision-Only Model Class, Benchmarked and Priced",
+   "url": "https://www.developersdigest.tech/blog/typesafe-jev-system-one-models-release-guide-2026",
+   "section": "explainer",
+   "by": "Developers Digest",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Rewrite of the launch post and evals site: per-model accuracy/cost/latency table, pricing, curl example. No testing of its own; repeats TypeSafe's caveats"
+  },
+  {
+   "title": "TypeSafe AI debuts model for machines that plays Doom",
+   "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
+   "section": "news",
+   "by": "Thomas Claburn (The Register)",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Launch coverage: $40M funding, typed probabilistic output, the Doom demo, pricing, and why \"hallucination-free\" is not a fair comparison since answers can still be wrong"
+  },
+  {
+   "title": "LLMの193倍速い“判断だけのAI”「Jev」、ChatGPTの共著研究者が開発",
+   "url": "https://pc.watch.impress.co.jp/docs/news/2141599.html",
+   "section": "news",
+   "by": "竹元 かつみ (PC Watch)",
+   "date": "2026-09-17",
+   "lang": "ja",
+   "note": "Japanese launch report; notes Almeida is one of about 20 InstructGPT co-authors, not ChatGPT's inventor, and that 193.6x/444.6x come from TypeSafe's own evals"
+  },
+  {
+   "title": "[AINews] Jev: a “System One Model” that only decides/classifies/routes/scores — >100x faster, >200x cheaper than small frontier LLMs",
+   "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+   "section": "news",
+   "by": "Latent Space",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Daily roundup leading with the launch; the Jev part is a short digest of X reactions (classifier/judge/router use, \"not a GPT replacement\", DSPy parallels)"
+  },
+  {
+   "title": "Browser Use's Jev Ultrafast Cuts Browser Agent Costs 90% With Indexed DOM Actions",
+   "url": "https://alphasignal.ai/news/browser-use-s-jev-ultrafast-cuts-browser-agent-costs-90-with-indexed-dom-actions",
+   "section": "news",
+   "by": "AlphaSignal Newsroom",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Reports Browser Use's MIT-licensed agent where Jev picks an action and element index per step; Google Flights demo in about 7s at a reported $0.0039. Paywalled midway"
+  },
+  {
+   "title": "Livestream Coding with the new TypeSafe AI JEV Model | Parallel Constrained Decoding",
+   "url": "https://www.youtube.com/watch?v=5Lx4DLLYafM",
+   "section": "video",
+   "by": "Neural Breakdown with AVB",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Livestream (about 2h19m) breaking down Jev and sketching network architectures for JSON-predictor models; per the description the content starts near 6:57"
+  },
+  {
+   "title": "100x Faster? He Co-Created ChatGPT. Now He Built the Opposite: Meet Jev.",
+   "url": "https://www.youtube.com/watch?v=oAI-5lhKWyU",
+   "section": "video",
+   "by": "Reindent",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Launch walkthrough with sources on screen: blog caveats, Doom and Wikiracing demos, the two outside tests, 'can't hallucinate' read closely, X thread questions"
+  },
+  {
+   "title": "Jev by TypeSafe AI: Jev vs LLMs - Parallel Sampling, Lower Latency, and Typed Outputs",
+   "url": "https://www.youtube.com/watch?v=JQFNpX1w6vY",
+   "section": "video",
+   "by": "Alex Hitt",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Nine-minute explainer: parallel sampling vs autoregression, RLCD, the primitives, an expense-claim example, and limits around semantic errors and auditability"
+  },
+  {
+   "title": "Introducing System One Models and Jev",
+   "url": "https://news.ycombinator.com/item?id=49717558",
+   "section": "discussion",
+   "by": "Hacker News",
+   "date": "2026-09-15",
+   "lang": "en",
+   "note": "Main launch thread (1,871 points, about 490 comments): whether the speed comparison is apples-to-oranges, classifier/encoder parallels, and requests for demo code"
+  },
+  {
+   "title": "Reverse-engineered Jev-like model",
+   "url": "https://news.ycombinator.com/item?id=49731282",
+   "section": "discussion",
+   "by": "Hacker News",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Thread on the jevlike repo (160 points): replication attempts, a commenter reporting a DiffusionGemma \"Jev mode\" at about 0.2s per decision, and a Qwen-2.5-1B clone"
+  },
+  {
+   "title": "OpenJev",
+   "url": "https://news.ycombinator.com/item?id=49752041",
+   "section": "discussion",
+   "by": "Hacker News",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "Thread on openjev.com (108 points, 53 comments): commenters note it is unaffiliated, emulates Jev with Qwen3 0.6B, takes 0.5-2s on an M2 Max, and question the name"
+  },
+  {
+   "title": "Open-sourced jev architecture last year with model,paper and dataset",
+   "url": "https://news.ycombinator.com/item?id=49736660",
+   "section": "discussion",
+   "by": "Hacker News",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Author claims a March 2025 arXiv paper (2503.23303) with open model and dataset used a similar non-autoregressive probability design; replies debate credit"
+  },
+  {
+   "title": "pngwn/open-jev",
+   "url": "https://huggingface.co/spaces/pngwn/open-jev",
+   "section": "open-model",
+   "by": "pngwn",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Gradio demo of the pngwn Qwen3.5-4B scorer: prefill state once, score all question/option branches in parallel; card reports 0.740 accuracy, ECE 0.047 on 500 Gradio PRs",
+   "notable": true
+  },
+  {
+   "title": "monotykamary/LFM2.5-2.6B-RLCD",
+   "url": "https://huggingface.co/monotykamary/LFM2.5-2.6B-RLCD",
+   "section": "open-model",
+   "by": "monotykamary",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Inference-only parallel constrained decoding on unchanged LFM2.5-2.6B; card reports ~9.9x speedup on L40S but 72.2% field accuracy on fresh cases vs 94.4% for AR JSON",
+   "notable": true
+  },
+  {
+   "title": "com-kotobalabs/open-jev-deberta-v3-large",
+   "url": "https://huggingface.co/com-kotobalabs/open-jev-deberta-v3-large",
+   "section": "open-model",
+   "by": "com-kotobalabs",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "DeBERTa-v3-large with a span head for choice/score/noul, trained on banking77, SST-5 and BoolQ gold labels; card reports 0.854 in-domain and 0.690 OOD accuracy",
+   "notable": true
+  },
+  {
+   "title": "mobarmg/jev-schema-scorer-deberta-v3-large",
+   "url": "https://huggingface.co/mobarmg/jev-schema-scorer-deberta-v3-large",
+   "section": "open-model",
+   "by": "mobarmg",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "DeBERTa-v3-large scalar scorer over (state, question+candidate) pairs, trained on 7,650 synthetic questions in 30 domains; card reports 0.889 choice acc, 0.940 noul acc",
+   "notable": true
+  },
+  {
+   "title": "pngwn/system-one-qwen3.5-4b-scorer",
+   "url": "https://huggingface.co/pngwn/system-one-qwen3.5-4b-scorer",
+   "section": "open-model",
+   "by": "pngwn",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Qwen3.5-4B-Base with LoRA r=16 and a scalar option-scoring head, 12,913 questions, 9 task families; card reports 0.707 test accuracy, ECE 0.044 after temperature scaling",
+   "notable": true
+  },
+  {
+   "title": "reachjalil/jevlogs-log-triage-benchmark",
+   "url": "https://huggingface.co/datasets/reachjalil/jevlogs-log-triage-benchmark",
+   "section": "open-dataset",
+   "by": "reachjalil",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "5,000 sanitized Loghub HDFS/BGL log lines with live Jev routing decisions and token counts; card reports 0.993 HDFS recall but only 0.84% of lines filtered out",
+   "notable": true
+  },
+  {
+   "title": "Mikhail/mini-jev-runs",
+   "url": "https://huggingface.co/datasets/Mikhail/mini-jev-runs",
+   "section": "open-dataset",
+   "by": "Mikhail",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "27,900 decision records with fp32 option-letter logits from frozen Qwen3-4B-Instruct-2507 on CLINC150; card reports 0.848 accuracy and scores that are not calibrated",
+   "notable": true
+  },
+  {
+   "title": "harshatheg/Qwen-2.5-1B-RLCD",
+   "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+   "section": "open-model",
+   "by": "harshatheg",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "MLX inference code, no new weights: Qwen2.5-1.5B-Instruct-4bit scores enum/boolean JSON fields in parallel; card reports 5.6x-7.0x speedup vs autoregressive (M4 Max)"
+  },
+  {
+   "title": "multimodalart/jev-reproductions-tracker",
+   "url": "https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker",
+   "section": "open-model",
+   "by": "multimodalart",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Static Space listing open Jev reproduction attempts in one grid (decoding tricks, diffusion, trained scorers, prior art, explainers), sorted by an engagement score"
+  },
+  {
+   "title": "shreyansh26/Qwen-2.5-1B-RLCD",
+   "url": "https://huggingface.co/shreyansh26/Qwen-2.5-1B-RLCD",
+   "section": "open-model",
+   "by": "shreyansh26",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "PyTorch server code, no fine-tuned weights: batched and FlexAttention tree scoring of enum/boolean fields on Qwen2.5-1.5B-Instruct; card gives no benchmark numbers"
+  },
+  {
+   "title": "notnotsamuel/LFM2.5-350M-RLCD",
+   "url": "https://huggingface.co/notnotsamuel/LFM2.5-350M-RLCD",
+   "section": "open-model",
+   "by": "notnotsamuel",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Inference-only constrained field scoring on unchanged LFM2.5-350M; card reports 8.46x (M2 Max) to 62.91x (L40S) speedup on 28 booleans at 60.7-64.3% field accuracy"
+  },
+  {
+   "title": "pngwn/system-one-qwen3.5-4b-scorer-v2b",
+   "url": "https://huggingface.co/pngwn/system-one-qwen3.5-4b-scorer-v2b",
+   "section": "open-model",
+   "by": "pngwn",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "v2 retrain of the pngwn Qwen3.5-4B-Base LoRA scorer on 45,932 questions for 2 epochs; card reports 0.803 val accuracy and ECE 0.022 (val split only, n=5,087)"
+  },
+  {
+   "title": "heman10x/rlcd-modernbert-151m",
+   "url": "https://huggingface.co/heman10x/rlcd-modernbert-151m",
+   "section": "open-model",
+   "by": "heman10x",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "151M GLiClass ModernBERT-base classifier with CE+Brier loss, temperature scaling, an abstain slot; card reports 95.0% top-1 and 3.35% ECE on 1,000 Banking77-based cases"
+  },
+  {
+   "title": "aahf/JevBenchmark",
+   "url": "https://huggingface.co/spaces/aahf/JevBenchmark",
+   "section": "open-model",
+   "by": "aahf",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Static article comparing Jev, GPT-5.6 Sol and XGBoost on four synthetic ad outcomes; card reports similar quality at ~64x lower estimated API cost and 5.4x lower latency"
+  },
+  {
+   "title": "SargeDev/jev-distill-corpus",
+   "url": "https://huggingface.co/datasets/SargeDev/jev-distill-corpus",
+   "section": "open-dataset",
+   "by": "SargeDev",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "148,160 query-passage rows with 0-7 graded relevance from a typed-judgment (Choice) API and a 32B teacher; card reports 91.0% binary agreement, Pearson r=0.897"
+  },
+  {
+   "title": "epsilon3/Qwen-2.5-1B-RLCD-Fast",
+   "url": "https://huggingface.co/epsilon3/Qwen-2.5-1B-RLCD-Fast",
+   "section": "open-model",
+   "by": "epsilon3",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Tree-attention variant of harshatheg's inference code on unchanged Qwen2.5-1.5B-Instruct; card reports up to 2.37x faster field decode and 98% less extra memory on M4 Pro"
+  },
+  {
+   "title": "Foodoo1/Qwen3-14B-RLCD-Decision-LoRA",
+   "url": "https://huggingface.co/Foodoo1/Qwen3-14B-RLCD-Decision-LoRA",
+   "section": "open-model",
+   "by": "Foodoo1",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "QLoRA on Qwen3-14B with loss on the single decision token, 4,152 synthetic fraud-triage cases; card reports 98.8% vs 85.2% base on 200 held-out synthetic cases, 4 fields"
+  },
+  {
+   "title": "DavidHatley/system-one-mini",
+   "url": "https://huggingface.co/DavidHatley/system-one-mini",
+   "section": "open-model",
+   "by": "DavidHatley",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "69.3M DistilBERT with five fixed classification heads over synthetic software-diagnosis summaries; card says not a Jev reproduction, reports 86.25% final-set accuracy"
+  },
+  {
+   "title": "reachjalil/jevlogs-triage-explorer",
+   "url": "https://huggingface.co/spaces/reachjalil/jevlogs-triage-explorer",
+   "section": "open-model",
+   "by": "reachjalil",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Gradio explorer for the jevlogs log-triage benchmark; makes no live Jev calls and recomputes routing from saved probabilities on sanitized Loghub HDFS and BGL samples"
+  },
+  {
+   "title": "mobarmg/jev-schema-scorer",
+   "url": "https://huggingface.co/spaces/mobarmg/jev-schema-scorer",
+   "section": "open-model",
+   "by": "mobarmg",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "Gradio demo and API for mobarmg/jev-schema-scorer-deberta-v3-large; you write your own choice/noul/score schema and it returns per-question distributions"
+  },
+  {
+   "title": "Eloiselatourdepise/qwen-rlcd-demo",
+   "url": "https://huggingface.co/spaces/Eloiselatourdepise/qwen-rlcd-demo",
+   "section": "open-model",
+   "by": "Eloiselatourdepise",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "Static in-browser (WebGPU/WASM) side-by-side demo of harshatheg/Qwen-2.5-1B-RLCD parallel constrained decoding vs autoregressive JSON generation; card gives no numbers"
+  },
+  {
+   "title": "pngwn/system-one-demo",
+   "url": "https://huggingface.co/spaces/pngwn/system-one-demo",
+   "section": "open-model",
+   "by": "pngwn",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Gradio demo of the pngwn Qwen3.5-4B-Base LoRA scorer next to Qwen3.5-4B instruct; card reports 0.705 test accuracy, ECE 0.046 and ~112 ms per query at 16 options or fewer"
+  },
+  {
+   "title": "reachjalil/jev-luna-pagerduty-trigger",
+   "url": "https://huggingface.co/datasets/reachjalil/jev-luna-pagerduty-trigger",
+   "section": "open-dataset",
+   "by": "reachjalil",
+   "date": "2026-09-17",
+   "lang": "en",
+   "note": "3,000 synthetic checkout/payments log lines with page/no-page gold labels plus Jev and GPT-5.6 Luna runs; card reports Jev v3 at p>=0.50 with 1.000 recall and precision"
+  },
+  {
+   "title": "reachjalil/jev-tree-choice-cap",
+   "url": "https://huggingface.co/datasets/reachjalil/jev-tree-choice-cap",
+   "section": "open-dataset",
+   "by": "reachjalil",
+   "date": "2026-09-18",
+   "lang": "en",
+   "note": "180 synthetic tickets over a 320-leaf incident taxonomy testing Jev's 255-option Choice cap; card reports authored tree walk 180/180 vs 90/180 when truncating to 255"
+  },
+  {
+   "title": "pngwn/system-one-decisions",
+   "url": "https://huggingface.co/datasets/pngwn/system-one-decisions",
+   "section": "open-dataset",
+   "by": "pngwn",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "Training set for the pngwn scorer: 12,913/1,452/1,751 rows of state, typed question, options, answer index; card body is the upstream support-ticket dataset text"
+  },
+  {
+   "title": "DavidHatley/system-one-mini-data",
+   "url": "https://huggingface.co/datasets/DavidHatley/system-one-mini-data",
+   "section": "open-dataset",
+   "by": "DavidHatley",
+   "date": "2026-09-16",
+   "lang": "en",
+   "note": "28,000 deterministic synthetic software-diagnosis summaries with five fixed labels, used to train DavidHatley/system-one-mini; card says not a Jev or RLCD reproduction"
+  }
+ ]
+}

@@ -9,3 +9,16 @@ export const CATEGORIES = [
   ["sdk", "SDKs and integrations", "Clients and adapters beyond the official Python and JS SDKs."],
 ];
 export const CATEGORY_IDS = CATEGORIES.map(c => c[0]);
+
+// Non-repo resources: data/resources.json.
+export const RESOURCE_SECTIONS = [
+  ["official-docs", "Official docs worth reading first", "TypeSafe's own pages. The failure-modes page is the one most people skip."],
+  ["platform", "Where you can call it", "Providers that serve Jev besides TypeSafe's own API."],
+  ["open-model", "Open models and demos on Hugging Face", "TypeSafe has released no weights. These are community reproductions of the idea; numbers are each card's own."],
+  ["open-dataset", "Datasets", ""],
+  ["hands-on", "Hands-on reports", "Someone ran it and wrote down what happened."],
+  ["explainer", "Explainers", "What it is and how to think about it. No original testing unless the note says so."],
+  ["video", "Videos", ""],
+  ["news", "News", ""],
+  ["discussion", "Discussion", ""],
+];

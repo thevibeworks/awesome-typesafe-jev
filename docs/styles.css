@@ -117,3 +117,24 @@ footer { max-width: var(--w); margin: 0 auto; padding: 28px 24px 60px; border-to
 /* Entries that are listed but not picks: compact, no media block. */
 .card:not(.pick) { border-top: 3px solid var(--yes-soft); }
 .card:not(.pick) .body { padding-top: 14px; }
+
+.read { max-width: var(--w); margin: 40px auto 0; padding: 48px 24px 8px; border-top: 1px solid var(--line); }
+#resources { columns: 2; column-gap: 48px; margin-top: 24px; }
+.res { break-inside: avoid; margin-bottom: 32px; }
+.res h3 { font: 600 16px var(--sans); margin: 0 0 6px; } .res > p { margin: 0 0 8px; font-size: 14px; }
+.res ul { list-style: none; padding: 0; margin: 0; } .res li { padding: 9px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.res li a { font-weight: 600; text-decoration: none; } .res .note { color: var(--mute); }
+.res .by { display: block; font: 12px var(--mono); color: var(--mute); margin-top: 2px; }
+@media (max-width: 860px) { #resources { columns: 1; } }
+
+/* Listed tier: dense rows. */
+.sec h2 .n { font: 13px var(--mono); color: var(--mute); margin-left: 10px; vertical-align: middle; }
+.rows { list-style: none; padding: 0; margin: 22px 0 0; columns: 2; column-gap: 40px; }
+.rows li { break-inside: avoid; padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.rows li > a { font-weight: 600; text-decoration: none; } .rows .what { color: var(--mute); }
+.rows .badge { margin-left: 6px; }
+.rows .meta { margin: 3px 0 0; padding: 0; }
+.more { margin-top: 14px; font: 600 14px var(--sans); padding: 8px 14px; cursor: pointer; border-radius: 4px;
+  background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.more:hover { border-color: var(--yes); color: var(--yes); }
+@media (max-width: 860px) { .rows { columns: 1; } }
