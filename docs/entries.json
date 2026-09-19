@@ -13997,6 +13997,46 @@
    "pushedAt": "2026-09-18",
    "license": "GPL-3.0",
    "language": "JavaScript"
+  },
+  {
+   "name": "jev-belay",
+   "repo": "valentynkit/jev-belay",
+   "url": "https://github.com/valentynkit/jev-belay",
+   "category": "agent-tooling",
+   "what": "Claude Code Stop hook that reads the transcript for evidence; if files changed with no passing check since, it asks Jev four questions and fails open on error.",
+   "added": "2026-09-19"
+  },
+  {
+   "name": "jev-commit",
+   "repo": "valentynkit/jev-commit",
+   "url": "https://github.com/valentynkit/jev-commit",
+   "category": "agent-tooling",
+   "what": "Pre-commit hook: one Jev call checks if the message matches the staged diff, flags debug leftovers and unmentioned work, and blocks on a detected credential.",
+   "added": "2026-09-19"
+  },
+  {
+   "name": "jev.nvim",
+   "repo": "valentynkit/jev.nvim",
+   "url": "https://github.com/valentynkit/jev.nvim",
+   "category": "application",
+   "what": "Neovim plugin that splits the buffer into functions with Treesitter, scores each against a question with Jev, and lists results in quickfix by probability.",
+   "added": "2026-09-19"
+  },
+  {
+   "name": "jev-skip",
+   "repo": "valentynkit/jev-skip",
+   "url": "https://github.com/valentynkit/jev-skip",
+   "category": "application",
+   "what": "Browser extension that reads YouTube's caption track and paints a per-segment sponsor probability on the seek bar before the intro ends, with no crowd database.",
+   "added": "2026-09-19"
+  },
+  {
+   "name": "jev-plays-pokemon-red",
+   "repo": "valentynkit/jev-plays-pokemon-red",
+   "url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+   "category": "game",
+   "what": "Pokemon Red on PyBoy where code handles routing and arithmetic and Jev picks only at branches, logging a Brier-scored faint prediction each battle turn.",
+   "added": "2026-09-19"
   }
  ],
  "resources": [
