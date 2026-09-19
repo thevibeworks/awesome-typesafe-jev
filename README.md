@@ -2,7 +2,7 @@
 # Awesome TypeSafe Jev [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![site](https://img.shields.io/badge/site-browse_with_media-1f6f4a)](https://thevibeworks.github.io/awesome-typesafe-jev/)
-[![entries](https://img.shields.io/badge/entries-1093-informational)](data/entries.json)
+[![entries](https://img.shields.io/badge/entries-1098-informational)](data/entries.json)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 <p align="center">
@@ -11,7 +11,7 @@
 
 A curated list of projects built on [Jev](https://typesafe.ai), TypeSafe AI's System One model. Jev does not write text. You send a `state` and typed questions (Choice, Score, Noul) and get probabilities back.
 
-**1093 projects, 35 editors' picks, 70 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1093 are listed. Stars were not a criterion: the median candidate has 0.
+**1098 projects, 35 editors' picks, 70 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1098 are listed. Stars were not a criterion: the median candidate has 0.
 
 **[Browse the site](https://thevibeworks.github.io/awesome-typesafe-jev/)** for media, filters and search. The data is one file: [`data/entries.json`](data/entries.json).
 
@@ -621,6 +621,8 @@ CLI and MCP server that fetches pages in local Chromium and has Jev score page r
 - [zavocc/ground-zero](https://github.com/zavocc/ground-zero) - Python library that uses Jev via OpenRouter to check whether model responses and tool-call outputs are grounded in the prompt and sources. <sub>no license · Python</sub>
 - [zhangxaochen/dsh-jev](https://github.com/zhangxaochen/dsh-jev) - Cordis plugin bundle for DeepSeek Harness adding a Jev client, semantic loop guard, shell safety gate and top-K tool pruner. <sub>MIT · TypeScript</sub>
 - [zsoXi/agent-handoff-gate](https://github.com/zsoXi/agent-handoff-gate) - Experimental protocol, schemas and offline evaluation kit for checking evidence behind worker agents' PASS/BLOCKED reports with Jev. <sub>MIT · Python</sub>
+- [valentynkit/jev-belay](https://github.com/valentynkit/jev-belay) - Claude Code Stop hook that reads the transcript for evidence; if files changed with no passing check since, it asks Jev four questions and fails open on error. <sub>no license</sub>
+- [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit) - Pre-commit hook: one Jev call checks if the message matches the staged diff, flags debug leftovers and unmentioned work, and blocks on a detected credential. <sub>no license</sub>
 
 ## Games and control
 
@@ -777,6 +779,7 @@ MuJoCo quadrotor that flies a five-station obstacle course from its camera, with
 - [Yasserbhb/Agent-JEV-Tetris](https://github.com/Yasserbhb/Agent-JEV-Tetris) - Tetris where Jev picks each move from seven legal actions annotated with code-computed landing outcomes, with notes on what fixed play. <sub>no license · HTML</sub>
 - [yeger00/jev-chess](https://github.com/yeger00/jev-chess) - Chrome extension plus Node service that plays chess.com bot games by asking Jev to choose among chess.js legal moves, with decision logs. <sub>no license · TypeScript</sub>
 - [YYK2007/jev-flappy](https://github.com/YYK2007/jev-flappy) - Flappy Bird where Jev chooses flap or coast every 160 ms from projected physics, showing probabilities, latency, tokens and cost. <sub>no license · JavaScript · [live](https://jev-flight-school.yusufkusibati.chatgpt.site)</sub>
+- [valentynkit/jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red) - Pokemon Red on PyBoy where code handles routing and arithmetic and Jev picks only at branches, logging a Brier-scored faint prediction each battle turn. <sub>no license</sub>
 
 ## Benchmarks and research
 
@@ -1319,6 +1322,8 @@ Chrome extension that asks Jev nine yes/no questions per X post or HN comment an
 - [yonidavidson/subtext](https://github.com/yonidavidson/subtext) - Message bus where subscriptions are English sentences and Jev answers one Noul per subscription per message; local web demo with a mock judge. <sub>MIT · TypeScript</sub>
 - [yutkat/github-star-organizer-jev](https://github.com/yutkat/github-star-organizer-jev) - Python tool and GitHub Actions workflow that classifies starred repos into existing GitHub Lists with Jev and can apply the assignments. <sub>MIT · Python</sub>
 - [zsoXi/FeedGate](https://github.com/zsoXi/FeedGate) - Chrome extension that uses Jev judgments to reversibly collapse spam and unwanted ads in the X feed while keeping ordinary promotional posts. <sub>GPL-3.0 · JavaScript</sub>
+- [valentynkit/jev.nvim](https://github.com/valentynkit/jev.nvim) - Neovim plugin that splits the buffer into functions with Treesitter, scores each against a question with Jev, and lists results in quickfix by probability. <sub>no license</sub>
+- [valentynkit/jev-skip](https://github.com/valentynkit/jev-skip) - Browser extension that reads YouTube's caption track and paints a per-segment sponsor probability on the seek bar before the intro ends, with no crowd database. <sub>no license</sub>
 
 ## Official
 
@@ -1651,7 +1656,7 @@ Mechanical checks, no judgment ([`scripts/gate.py`](scripts/gate.py)): the repo 
 Then a reviewer reads it. Two tiers:
 
 - **Editors' picks** (35): README read in full. Each carries a "why it is here" line and, where there is one, the weakness you should know first. Some carry media.
-- **Listed** (1058): the README's opening and metadata were reviewed against the same rules. One line saying what it does. **(notable)** marks the ones a reviewer flagged as clearly above the rest: measurements with a method, a demo shown working, tests, or an honest limits section.
+- **Listed** (1063): the README's opening and metadata were reviewed against the same rules. One line saying what it does. **(notable)** marks the ones a reviewer flagged as clearly above the rest: measurements with a method, a demo shown working, tests, or an honest limits section.
 
 Rules for both: it does something concrete with Jev, or reproduces its interface in the open; the README shows how to run it or what it does in specifics; it is not a stub, a plan, a link collection, or a bare copy of the official SDKs. Stars are not a criterion in either direction. Descriptions are written by the reviewer in plain words, and numbers from a README are reported as the README's claims.
 
