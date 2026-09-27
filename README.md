@@ -2,7 +2,7 @@
 # Awesome TypeSafe Jev [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![site](https://img.shields.io/badge/site-browse_with_media-1f6f4a)](https://thevibeworks.github.io/awesome-typesafe-jev/)
-[![entries](https://img.shields.io/badge/entries-1093-informational)](data/entries.json)
+[![entries](https://img.shields.io/badge/entries-1094-informational)](data/entries.json)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 <p align="center">
@@ -11,7 +11,7 @@
 
 A curated list of projects built on [Jev](https://typesafe.ai), TypeSafe AI's System One model. Jev does not write text. You send a `state` and typed questions (Choice, Score, Noul) and get probabilities back.
 
-**1093 projects, 35 editors' picks, 70 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1093 are listed. Stars were not a criterion: the median candidate has 0.
+**1094 projects, 35 editors' picks, 70 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1094 are listed. Stars were not a criterion: the median candidate has 0.
 
 **[Browse the site](https://thevibeworks.github.io/awesome-typesafe-jev/)** for media, filters and search. The data is one file: [`data/entries.json`](data/entries.json).
 
@@ -992,6 +992,7 @@ Open 2B reproduction of the System One model class, fine-tuned from Qwen3.5-2B-B
 - [xingwudao/OpenJev](https://github.com/xingwudao/OpenJev) - Independent Jev-style decision API with a local mock server, Python and JS SDKs, schema validation and tests; probabilities are synthetic. <sub>no license · Python</sub>
 - [xucian/fbyte-jev-vs-claude](https://github.com/xucian/fbyte-jev-vs-claude) - Benchmark scripts comparing Jev via OpenRouter with Claude Opus and Sonnet on five 20-case classification tasks, with an HTML report. <sub>no license · HTML</sub>
 - [zhuyansen/jev-support-pulse](https://github.com/zhuyansen/jev-support-pulse) - Study labelling 170k support tweets with Jev to detect outages before brands acknowledge them, compared with volume, keyword and sentiment baselines. <sub>MIT · Python</sub>
+- [feder-cr/jev](https://github.com/feder-cr/jev) - Open reimplementation of Jev for yes/no questions only: a 1B model cut to 17 layers, GGUF-quantized, answering /v1/systemone on CPU in one forward pass. <sub>MIT · Python</sub>
 
 ## Applications and demos
 
@@ -1651,7 +1652,7 @@ Mechanical checks, no judgment ([`scripts/gate.py`](scripts/gate.py)): the repo 
 Then a reviewer reads it. Two tiers:
 
 - **Editors' picks** (35): README read in full. Each carries a "why it is here" line and, where there is one, the weakness you should know first. Some carry media.
-- **Listed** (1058): the README's opening and metadata were reviewed against the same rules. One line saying what it does. **(notable)** marks the ones a reviewer flagged as clearly above the rest: measurements with a method, a demo shown working, tests, or an honest limits section.
+- **Listed** (1059): the README's opening and metadata were reviewed against the same rules. One line saying what it does. **(notable)** marks the ones a reviewer flagged as clearly above the rest: measurements with a method, a demo shown working, tests, or an honest limits section.
 
 Rules for both: it does something concrete with Jev, or reproduces its interface in the open; the README shows how to run it or what it does in specifics; it is not a stub, a plan, a link collection, or a bare copy of the official SDKs. Stars are not a criterion in either direction. Descriptions are written by the reviewer in plain words, and numbers from a README are reported as the README's claims.
 

@@ -13997,6 +13997,18 @@
    "pushedAt": "2026-09-18",
    "license": "GPL-3.0",
    "language": "JavaScript"
+  },
+  {
+   "name": "jevos",
+   "repo": "feder-cr/jev",
+   "url": "https://github.com/feder-cr/jev",
+   "category": "benchmark-research",
+   "what": "Open reimplementation of Jev for yes/no questions only: a 1B model cut to 17 layers, GGUF-quantized, answering /v1/systemone on CPU in one forward pass",
+   "added": "2026-09-27",
+   "stars": 880,
+   "pushedAt": "2026-09-27",
+   "license": "MIT",
+   "language": "Python"
   }
  ],
  "resources": [
