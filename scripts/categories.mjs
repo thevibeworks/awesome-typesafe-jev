@@ -17,6 +17,7 @@ export const RESOURCE_SECTIONS = [
   ["open-model", "Open models and demos on Hugging Face", "TypeSafe has released no weights. These are community reproductions of the idea; numbers are each card's own."],
   ["open-dataset", "Datasets", ""],
   ["hands-on", "Hands-on reports", "Someone ran it and wrote down what happened."],
+  ["research", "Research and ecosystem studies", "Data-driven studies of Jev use and its emerging ecosystem."],
   ["explainer", "Explainers", "What it is and how to think about it. No original testing unless the note says so."],
   ["video", "Videos", ""],
   ["news", "News", ""],

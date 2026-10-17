@@ -11,7 +11,7 @@
 
 A curated list of projects built on [Jev](https://typesafe.ai), TypeSafe AI's System One model. Jev does not write text. You send a `state` and typed questions (Choice, Score, Noul) and get probabilities back.
 
-**1093 projects, 35 editors' picks, 70 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1093 are listed. Stars were not a criterion: the median candidate has 0.
+**1093 projects, 35 editors' picks, 71 things to read and watch. Nothing is listed unread.** A sweep of GitHub, npm and Hugging Face found 2,163 candidate repos; 1,493 passed mechanical checks; all of those that are actually about Jev were reviewed (1,340), and 1093 are listed. Stars were not a criterion: the median candidate has 0.
 
 **[Browse the site](https://thevibeworks.github.io/awesome-typesafe-jev/)** for media, filters and search. The data is one file: [`data/entries.json`](data/entries.json).
 
@@ -1512,7 +1512,7 @@ TypeScript client with tagged-template helpers (ask.if, ask.choice, ask.switch, 
 
 ## Read and watch
 
-70 pieces, each opened and read. Notes say what you get, and attribute claims to their authors.
+71 pieces, each opened and read. Notes say what you get, and attribute claims to their authors.
 
 ### Official docs worth reading first
 
@@ -1587,6 +1587,12 @@ Someone ran it and wrote down what happened.
 - [Mini-Vibe Check: TypeSafe's Jev Judged Everything I've Written in 0.7 Seconds](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds) - Every's head of evals ran Jev over his own writing; the free preview explains the yes/no-probability idea and says accuracy is still open. Rest needs an account. <sub>Mike Taylor (Every) · 2026-09-15</sub>
 - [jev 同士に五目並べで対戦させた](https://zenn.dev/mizchi/articles/jev-plays-gomoku) - mizchi had Jev play gomoku against itself via one Choice over legal moves; a 25-move game took 13.9s, about 500ms per move, with confidence logged per move. Repo linked. <sub>mizchi · 2026-09-17 · ja</sub>
 - [TypeSafeのJevを正しく驚く、それってLLMでできませんか？](https://zenn.dev/nwn/articles/824026c76116e0) - Author rebuilt the parallel-answer trick with Gemma3 270M first-token logits and reports 77x over JSON output; in a Mario harness Jev still beat the older LLMs tried. <sub>ヨ (nwn) · 2026-09-17 · ja</sub>
+
+### Research and ecosystem studies
+
+Data-driven studies of Jev use and its emerging ecosystem.
+
+- [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216) - 2,170 public GitHub Jev projects as of 2026-09-22: growth, domains, decision purposes, interfaces, where stars go. Labels are LLM-assigned; no human check reported. <sub>Guoming Ling, Muen Xue, Zijian Ye · 2026-09-24</sub>
 
 ### Explainers
 

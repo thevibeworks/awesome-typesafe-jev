@@ -14206,6 +14206,15 @@
    "note": "Author rebuilt the parallel-answer trick with Gemma3 270M first-token logits and reports 77x over JSON output; in a Mario harness Jev still beat the older LLMs tried"
   },
   {
+   "title": "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+   "url": "https://arxiv.org/abs/2609.30216",
+   "section": "research",
+   "by": "Guoming Ling, Muen Xue, Zijian Ye",
+   "date": "2026-09-24",
+   "lang": "en",
+   "note": "2,170 public GitHub Jev projects as of 2026-09-22: growth, domains, decision purposes, interfaces, where stars go. Labels are LLM-assigned; no human check reported"
+  },
+  {
    "title": "Jev means structured output is interesting again",
    "url": "https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/",
    "section": "explainer",
@@ -14643,6 +14652,11 @@
    "hands-on",
    "Hands-on reports",
    "Someone ran it and wrote down what happened."
+  ],
+  [
+   "research",
+   "Research and ecosystem studies",
+   "Data-driven studies of Jev use and its emerging ecosystem."
   ],
   [
    "explainer",
